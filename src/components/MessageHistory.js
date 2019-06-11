@@ -1,6 +1,7 @@
 import React from 'react';
 import './MessageHistory.css';
 import Message from './Message';
+import PropTypes from 'prop-types';
 
 const MessageHistory = (props) => {
   const history = props.history.map((message, i) => {
@@ -16,6 +17,12 @@ const MessageHistory = (props) => {
       {history}
     </div>
   )
+};
+
+MessageHistory.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.object),
+  body: PropTypes.string,
+  timeStamp: PropTypes.string,
 };
 
 export default MessageHistory;

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Message.css';
 import Timestamp from './Timestamp';
+import PropTypes from 'prop-types';
 
 const Message = (props) => {
   return (
@@ -12,6 +13,12 @@ const Message = (props) => {
       </div>
     </section>
   )
+};
+
+Message.propTypes = {
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string,
+  timeStamp: PropTypes.string,
 };
 
 export default Message;
