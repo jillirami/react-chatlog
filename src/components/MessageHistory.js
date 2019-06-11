@@ -5,12 +5,14 @@ import Message from './Message';
 const MessageHistory = (props) => {
   const history = props.history.map((message, i) => {
     return (
-      <Message key={i} sender={message.sender} body={message.body} timeStamp={message.timeStamp}/>
+      <p className={`chat-entry ${message.sender === "Vladimir" ? "local" : "remote"}`}>
+        <Message key={i} sender={message.sender} body={message.body} timeStamp={message.timeStamp}/>
+      </p>
     )
   });
 
   return (
-    <div className="MessageHistory">
+    <div className="chat-log">
       {history}
     </div>
   )

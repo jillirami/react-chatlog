@@ -4,13 +4,13 @@ import Timestamp from './Timestamp';
 
 const Message = (props) => {
   return (
-    <div className="Message">
-    <header className="Message-header">
-      <p>{props.sender}</p>
-      <p>{props.body}</p>
-      <p><Timestamp time={props.timeStamp}/></p>
-    </header>
-  </div>
+    <section>
+      <p className="entry-name"><b>{props.sender}</b></p>
+      <div className="entry-bubble">
+          <p className="entry-body">{props.body}</p>
+          <p className="entry-time"><Timestamp time={props.timeStamp}/></p>
+      </div>
+    </section>
   )
 };
 
