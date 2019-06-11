@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 const MessageHistory = (props) => {
   const history = props.history.map((message, i) => {
     return (
-      <p className={`chat-entry ${message.sender === "Vladimir" ? "local" : "remote"}`}>
-        <Message key={i} sender={message.sender} body={message.body} timeStamp={message.timeStamp}/>
-      </p>
+      <div key={i} className={`chat-entry ${message.sender === "Vladimir" ? "local" : "remote"}`}>
+        <Message sender={message.sender} body={message.body} timeStamp={message.timeStamp}/>
+      </div>
     )
   });
 
